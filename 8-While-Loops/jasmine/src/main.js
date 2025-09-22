@@ -41,29 +41,31 @@ console.log(wedgesCut);
 console.log(limesCut)
 
 //task3
-let timeLeft = 40;
+let timeLeft = 7;
 let orders = ["Energizer", "All or Nothing", "Green Garden", "Tropical Island"];
 let totalTime = 0;
-for (let i=0; i<orders.length; i++) {
-    if (juice == "Pure Strawberry Joy"){
-        timeToMixJuiceResults = 0.5;
+let orderIndex = 0;
+while(totalTime < timeLeft && orderIndex < orders.length){
+    if (orders[orderIndex] == "Pure Strawberry Joy") {
+        totalTime += 0.5;
     }
-    else if (juice == "Energizer" || juice == "Green Garden"){
-        timeToMixJuiceResults = 1.5;
+    else if (orders[orderIndex] == "Energizer" || orders[orderIndex] == "Green Garden"){
+        totalTime += 1.5;
     }
-    else if (juice == "Tropical Island"){
-        timeToMixJuiceResults = 3;
+    else if (orders[orderIndex] == "Tropical Island"){
+        totalTime += 3;
     }
-    else if (juice == "All or Nothing"){
-        timeToMixJuiceResults = 3;
+    else if (orders[orderIndex] == "All or Nothing"){
+        totalTime += 2.5;
     }
-    else {
-        timeToMixJuiceResults = 2.5;
-    }
-    orderTrack.push(juice);
-    totalTime += timeToMixJuiceResults
+    orderIndex += 1;
 }
 
-while (totalTime < timeLeft && index < orderTrack) {
-    
+let remainingOrders = [""]
+if(orderIndex < orders.length){
+    remainingOrders.push(orders[orderIndex]);
+    for(let t=orderIndex; t<orders.length; t++){
+        remainingOrders.push(orders[t]);
+    }
 }
+console.log(remainingOrders);
