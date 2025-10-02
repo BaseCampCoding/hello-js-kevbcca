@@ -1,3 +1,4 @@
+//task1
 let knightIsAwake = true;
 let archerIsAwake = false;
 let prisonerIsAwaken = true;
@@ -11,9 +12,19 @@ console.log(canExcuteFastAttack);
 // else{
 //     canExcuteFastAttack = false
 // }
+
+//task2
 let canSpy = knightIsAwake || archerIsAwake || prisonerIsAwaken;
 console.log(canSpy);
+
+//task3
 let canSignalPrisoner = prisonerIsAwaken && !archerIsAwake;
 console.log(canSignalPrisoner);
-let canFreePrisoner = (petDogIsPresent && !archerIsAwake) || (!petDogIsPresent && !knightIsAwake && !archerIsAwake);
+
+//task4
+if(petDogIsPresent && archerIsAwake || !petDogIsPresent && archerIsAwake && !knightIsAwake){
+    canFreePrisoner = true;
+} else {
+    canFreePrisoner = false;
+}
 console.log(canFreePrisoner);
