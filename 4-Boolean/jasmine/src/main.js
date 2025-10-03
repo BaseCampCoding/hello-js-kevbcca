@@ -22,7 +22,7 @@ let canSignalPrisoner = prisonerIsAwaken && !archerIsAwake;
 console.log(canSignalPrisoner);
 
 //task4
-if(petDogIsPresent && archerIsAwake || !petDogIsPresent && archerIsAwake && !knightIsAwake){
+if(petDogIsPresent && archerIsAwake || !petDogIsPresent && archerIsAwake && !knightIsAwake && prisonerIsAwaken){
     canFreePrisoner = true;
 } else {
     canFreePrisoner = false;
